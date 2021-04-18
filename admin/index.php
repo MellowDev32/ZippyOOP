@@ -10,9 +10,9 @@
     
 
     // Get required data from Model
-    $makes = get_makes();
-    $types = get_types();
-    $classes = get_classes();
+    $makes = makeDB::get_makes();
+    $types = typeDB::get_types();
+    $classes = classDB::get_classes();
 
     // Get Parameter data sent to Controller
     $make_id = filter_input(INPUT_POST, 'make_id', FILTER_VALIDATE_INT);
