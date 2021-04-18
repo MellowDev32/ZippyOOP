@@ -1,8 +1,8 @@
 <?php
     // Heroku connection
-    $dsn = 'mysql:host=cis9cbtgerlk68wl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=dskhqy7gjigp1tyk';
-    $username = 'mjlp8ikbk27a5shw';
-    $password = 'aeako0qc5rkgczos'; 
+    $dsn = 'mysql:host=grp6m5lz95d9exiz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=qg6jlaugvzewbacd';
+    $username = 'ilxxtz4dujznlm3s';
+    $password = 'oo858qqbh2afdkcz'; 
     
     try {
         // Heroku connection
