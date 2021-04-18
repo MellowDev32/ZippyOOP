@@ -1,13 +1,13 @@
 <?php 
     switch($action) {
         case 'add_make':
-            add_make($make_name);
+            makeDB::add_make($make_name);
             header("Location: .?action=list_makes");
             break;
         case 'delete_make':
             if ($make_id) {
                 try {
-                    delete_make($make_id);
+                    makeDB::delete_make($make_id);
                 } catch (PDOException $e) {
                     $error = "You cannot delete a make if vehicles are assigned to the make ID.";
                     include('view/error.php');

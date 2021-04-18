@@ -12,9 +12,9 @@
     require('model/make_db.php');
 
     // Get required data from Model
-    $types = get_types();
-    $classes = get_classes();
-    $makes = get_makes();
+    $types = typeDB::get_types();
+    $classes = classDB::get_classes();
+    $makes = makeDB::get_makes();
 
     // Get Parameter data sent to Controller
     $make_id = filter_input(INPUT_GET, 'make_id', FILTER_VALIDATE_INT);
@@ -39,21 +39,21 @@
     // Extra credit solution 
     switch($action){
         case 'list_vehicles':
-            $vehicles = get_all_vehicles($sort);
+            $vehicles = vehicleDB::get_all_vehicles($sort);
             if ($make_id) {
-                $make_name = get_make_name($make_id);
+                $make_name = makeDB::get_make_name($make_id);
                 $vehicles = array_filter($vehicles, function($array) use ($make_name) {
                     return $array["makeName"] === $make_name;
                 });
             }
             if ($type_id) {
-                $type_name = get_type_name($type_id);
+                $type_name = typeDB::get_type_name($type_id);
                 $vehicles = array_filter($vehicles, function($array) use ($type_name) {
                     return $array["typeName"] === $type_name;
                 });
             }
             if ($class_id) {
-                $class_name = get_class_name($class_id);
+                $class_name = classDB::get_class_name($class_id);
                 $vehicles = array_filter($vehicles, function($array) use ($class_name) {
                     return $array["className"] === $class_name;
                 });

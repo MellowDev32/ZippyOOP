@@ -1,13 +1,13 @@
 <?php
     switch($action) {
         case 'add_type':
-            add_type($type_name);
+            typeDB::add_type($type_name);
             header("Location: .?action=list_types");
             break;
         case 'delete_type':
             if ($type_id) {
                 try {
-                    delete_type($type_id);
+                    typeDB::delete_type($type_id);
                 } catch (PDOException $e) {
                     $error = "You cannot delete a type if vehicles are assigned to the type ID.";
                     include('view/error.php');
