@@ -12,5 +12,6 @@
 <body>
     <main>
         <header>
+            <p style="float: right;"><a href=".?action=logout">Logout</a></p>
             <h1>Zippy Admin</h1>
         </header>

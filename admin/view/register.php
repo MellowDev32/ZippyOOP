@@ -4,7 +4,7 @@
 <p><?= $error ?></p>
 <?php endforeach;
     } ?>
-<form action="." method="post">
+<form action="." method="post" class="add_vehicle_form">
     <input type="hidden" name="action" value="register">
     <div>
         <label>Username:</label>
