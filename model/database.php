@@ -1,5 +1,5 @@
 <?php
-class Datatbase{
+class Database {
     // Heroku connection
     private static $dsn = 'mysql:host=grp6m5lz95d9exiz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=qg6jlaugvzewbacd';
     private static $username = 'ilxxtz4dujznlm3s';

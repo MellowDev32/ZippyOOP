@@ -1,6 +1,7 @@
 <?php 
-    function get_classes() {
-        global $db;
+class classDB {
+    public static function get_classes() {
+        $db = Database::getDB();
         $query = 'SELECT * FROM classes ORDER BY classID';
         $statement = $db->prepare($query);
         $statement->execute();
@@ -9,8 +10,8 @@
         return $classes;
     }
 
-    function get_class_name($class_id) {
-        global $db;
+    public static function get_class_name($class_id) {
+        $db = Database::getDB();
         $query = 'SELECT * FROM classes WHERE classID = :class_id';
         $statement = $db->prepare($query);
         $statement->bindValue(':class_id', $class_id);
@@ -21,8 +22,8 @@
         return $class_name;
     }
 
-    function delete_class($class_id) {
-        global $db;
+    public static function delete_class($class_id) {
+        $db = Database::getDB();
         $query = 'DELETE FROM classes WHERE classID = :class_id';
         $statement = $db->prepare($query);
         $statement->bindValue(':class_id', $class_id);
@@ -30,8 +31,8 @@
         $statement->closeCursor();
     }
 
-    function add_class($class_name) {
-        global $db;
+    public static function add_class($class_name) {
+        $db = Database::getDB();
         $query = 'INSERT INTO classes (className)
               VALUES
                  (:className)';
@@ -40,3 +41,4 @@
         $statement->execute();
         $statement->closeCursor();
     }
+}
